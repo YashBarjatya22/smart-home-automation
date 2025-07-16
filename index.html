@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Home Automation</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Custom JavaScript -->
+  <script defer src="geo.js"></script>
+  <script defer src="menu.js"></script>
+  <script defer src="fetch-api.js"></script>
+</head>
+<body class="bg-gray-100">
+
+
+  <!-- Hero Section -->
+  <section class="relative w-full h-[60vh] flex items-center justify-center bg-cover bg-center mb-8" style="background-image: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 text-center text-white px-4">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Welcome to Smart Home Automation</h1>
+      <p class="text-lg md:text-2xl mb-6 font-medium drop-shadow">Experience the future of living—control, comfort, and security at your fingertips.</p>
+      <a href="#gallery" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full text-lg shadow-lg transition">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- Navbar -->
+  <header class="bg-gray-800 text-white px-4 py-3">
+    <div class="flex items-center justify-between">
+      <h1 class="text-xl font-bold">Smart Home Automation</h1>
+      <button class="block md:hidden focus:outline-none" id="menuBtn" aria-label="Open Menu">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      <ul class="hidden md:flex space-x-6 text-lg" id="navLinks">
+        <li><a href="#section1" class="hover:text-blue-300 flex items-center"><i class="fas fa-house mr-1"></i> <span>Home</span></a></li>
+        <li><a href="#section2" class="hover:text-blue-300 flex items-center"><i class="fas fa-map-marker-alt mr-1"></i> <span>Places</span></a></li>
+        <li><a href="#gallery" class="hover:text-blue-300 flex items-center"><i class="fas fa-image mr-1"></i> <span>Gallery</span></a></li>
+        <li><a href="#section3" class="hover:text-blue-300 flex items-center"><i class="fas fa-envelope mr-1"></i> <span>Contact</span></a></li>
+      </ul>
+    </div>
+    <ul class="md:hidden mt-3 space-y-2 hidden" id="mobileMenu">
+      <li><a href="#section1" class="block hover:text-blue-300"><i class="fas fa-house mr-2"></i> <span>Home</span></a></li>
+      <li><a href="#section2" class="block hover:text-blue-300"><i class="fas fa-map-marker-alt mr-2"></i> <span>Places</span></a></li>
+      <li><a href="#gallery" class="block hover:text-blue-300"><i class="fas fa-image mr-2"></i> <span>Gallery</span></a></li>
+      <li><a href="#section3" class="block hover:text-blue-300"><i class="fas fa-envelope mr-2"></i> <span>Contact</span></a></li>
+    </ul>
+  </header>
+
+  <!-- Main Content -->
+  <main class="p-4">
+
+
+    <!-- Wrapper to center the content -->
+<div class="flex justify-center items-center w-full">
+  <!-- Original flex container -->
+  <div class="flex flex-wrap gap-4 justify-center">
+    <section id="section1" class="flex flex-col items-center section-box">
+      <h2 class="section-title flex items-center gap-2"><i class="fas fa-house text-blue-600"></i> What is Smart Home Automation?</h2>
+      <img src="img/download (1).jpeg" alt="Smart Home Devices" class="rounded mb-3" />
+      <div class="w-full max-w-2xl">
+        <h3 class="text-lg font-semibold mb-2 text-blue-700">Definition</h3>
+        <p class="mb-4 text-gray-700">Smart Home Automation involves controlling home devices remotely to improve convenience, security, and energy efficiency.</p>
+        <h4 class="text-md font-semibold mb-1 text-blue-600">How Does It Work?</h4>
+        <ul class="list-disc list-inside text-left text-gray-800 space-y-2 mb-4">
+          <li>Uses advanced technologies like <span class="font-bold">artificial intelligence (AI)</span>, <span class="font-bold">machine learning</span>, <span class="font-bold">sensors</span>, and the <span class="font-bold">Internet of Things (IoT)</span> to automatically control devices, systems, or processes without human intervention.</li>
+        </ul>
+        <h4 class="text-md font-semibold mb-1 text-blue-600">In Simple Terms</h4>
+        <ul class="list-disc list-inside text-left text-gray-800 space-y-2">
+          <li>Machines or devices work intelligently on their own to make life easier, more efficient, or safer.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="section2" class="flex flex-col items-center section-box">
+      <h2 class="section-title flex items-center gap-2"><i class="fas fa-bolt text-yellow-500"></i> Benefits of Smart Home Automation</h2>
+      <img src="img/download.jpeg" alt="Benefits of smart homes" class="rounded mb-3" />
+      <div class="w-full max-w-2xl">
+        <h3 class="text-lg font-semibold mb-2 text-blue-700">Why Choose Smart Home Automation?</h3>
+        <p class="mb-4 text-gray-700">Smart home automation offers a range of advantages that make daily living easier, safer, and more comfortable. Here are some of the key benefits:</p>
+        <ul class="list-disc list-inside text-left text-gray-800 space-y-3">
+          <li>
+            <span class="font-bold text-blue-600">Convenience:</span> Automates repetitive tasks (like switching on lights or adjusting the thermostat) and allows remote control via smartphone apps or voice assistants (e.g., Alexa, Google Assistant).
+          </li>
+          <li>
+            <span class="font-bold text-blue-600">Energy Efficiency:</span> Devices operate only when needed (e.g., lights turn off automatically when no one is in the room). Smart thermostats adjust heating/cooling based on real-time needs, resulting in reduced electricity and utility bills.
+          </li>
+          <li>
+            <span class="font-bold text-blue-600">Time Saving:</span> Automates routine tasks like scheduling appliances, watering plants, or managing security, reducing human intervention and multitasking.
+          </li>
+          <li>
+            <span class="font-bold text-blue-600">Safety & Security:</span> Smart cameras, sensors, and alarms help monitor your home and alert you to unusual activity, increasing overall safety.
+          </li>
+          <li>
+            <span class="font-bold text-blue-600">Comfort:</span> Personalized settings for lighting, temperature, and entertainment systems enhance your living experience.
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+    <!-- Audio Section -->
+    <section id="audio-section" class="section-box mt-6 flex flex-col items-center">
+      <h2 class="section-title flex items-center gap-2 mb-2"><i class="fas fa-music text-purple-500"></i> Listen to Smart Home Sounds</h2>
+      <audio controls class="w-full max-w-md mb-4">
+        <source src="./img/Billie Eilish - Hotline Bling (InstrumentalTikTok Version Looped) Lyrics.mp3" type="audio/mpeg">
+       
+      </audio>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-box mt-6">
+      <h2 class="section-title mb-4 flex items-center gap-2"><i class="fas fa-image text-pink-500"></i> Gallery</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="overflow-hidden rounded-lg shadow-lg bg-white flex flex-col items-center">
+          <img src="img/download.jpeg" alt="Smart Home 1" class="object-cover w-full h-48 hover:scale-105 transition-transform duration-200" />
+          <p class="p-2 text-center text-gray-700">Smart Home Lighting</p>
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg bg-white flex flex-col items-center">
+          <img src="img/download (1).jpeg" alt="Smart Home 2" class="object-cover w-full h-48 hover:scale-105 transition-transform duration-200" />
+          <p class="p-2 text-center text-gray-700">Smart Home Devices</p>
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg bg-white flex flex-col items-center">
+          <img src="./img/home 1.jpeg" alt="Smart Home 3" class="object-cover w-full h-48 hover:scale-105 transition-transform duration-200" />
+          <p class="p-2 text-center text-gray-700">Automated Living Room</p>
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg bg-white flex flex-col items-center">
+          <img src="./img/home 2.jpeg" alt="Smart Home 4" class="object-cover w-full h-48 hover:scale-105 transition-transform duration-200" />
+          <p class="p-2 text-center text-gray-700">Voice Assistant Setup</p>
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg bg-white flex flex-col items-center">
+          <img src="./img/image.png" alt="Smart Home 5" class="object-cover w-full h-48 hover:scale-105 transition-transform duration-200" />
+          <p class="p-2 text-center text-gray-700">Smart Home Dashboard</p>
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-lg bg-white flex flex-col items-center">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Smart Home 7" class="object-cover w-full h-48 hover:scale-105 transition-transform duration-200" />
+          <p class="p-2 text-center text-gray-700">Thermostat Control</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section (moved below gallery) -->
+    <section id="video-section" class="section-box mt-6 flex flex-col items-center">
+      <h2 class="section-title flex items-center gap-2 mb-2"><i class="fas fa-video text-red-500"></i> Watch Smart Home in Action</h2>
+      <video controls class="w-full max-w-2xl rounded shadow mb-4">
+        <source src="./img/Grenton Smart Home system - 3D Animation.mp4" type="video/mp4">
+        
+      </video>
+    </section>
+
+    <section id="location" class="section-box mt-6">
+      <h2 class="section-title">Your Current Location</h2>
+      <p>This smart home can adjust settings based on your location.</p>
+      <p><strong>Latitude:</strong> <span id="latitude">Detecting...</span></p>
+      <p><strong>Longitude:</strong> <span id="longitude">Detecting...</span></p>
+    </section>
+
+    <section id="feedback" class="section-box mt-6">
+      <h2 class="section-title">Smart Home Feedback</h2>
+      <form id="feedbackForm" class="space-y-3">
+        <input type="text" id="name" placeholder="Your Name" required class="w-full border p-2 rounded" />
+        <textarea id="comment" placeholder="Your Comment" required class="w-full border p-2 rounded"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+      </form>
+      <div id="feedbackDisplay" class="mt-4"></div>
+    </section>
+
+    <section id="section3" class="section-box mt-6">
+      <h2 class="section-title">Contact</h2>
+      <p>Want to learn more? Email me at <a href="mailto:yashbarjatya22sep@gmail.com" class="text-blue-500 underline">yashbarjatya22sep@gmail.com</a></p>
+      <div class="mt-6 p-4 bg-gray-100 rounded shadow max-w-md mx-auto">
+        <h3 class="text-lg font-semibold mb-2 text-blue-700">Share Your Thoughts</h3>
+        <form id="domainFeedbackForm" class="space-y-3">
+          <input type="text" id="userFullName" name="userFullName" placeholder="Your Name" required class="w-full border p-2 rounded" />
+          <input type="tel" id="userMobile" name="userMobile" placeholder="any suggestions" pattern="[0-9]{10}" maxlength="10" required class="w-full border p-2 rounded" />
+          <textarea id="userDomainOpinion" name="userDomainOpinion" placeholder="What do you think of Smart Home Automation?" required class="w-full border p-2 rounded"></textarea>
+
+          <div>
+            <label class="block font-semibold mb-1">Preferred Time:</label>
+            <div class="flex gap-4">
+              <label class="flex items-center custom-highlight"><input type="radio" name="preferredTime" value="Morning" class="mr-2">Morning</label>
+              <label class="flex items-center custom-highlight"><input type="radio" name="preferredTime" value="Afternoon" class="mr-2">Afternoon</label>
+              <label class="flex items-center custom-highlight"><input type="radio" name="preferredTime" value="Evening" class="mr-2">Evening</label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-semibold mb-1">Service Level Interested In:</label>
+            <div class="flex gap-4 flex-wrap">
+              <label class="flex items-center custom-highlight"><input type="checkbox" name="serviceLevel" value="Basic" class="mr-2">Basic</label>
+              <label class="flex items-center custom-highlight"><input type="checkbox" name="serviceLevel" value="Premium" class="mr-2">Premium</label>
+              <label class="flex items-center custom-highlight"><input type="checkbox" name="serviceLevel" value="Enterprise" class="mr-2">Enterprise</label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-semibold mb-1">Feedback Type:</label>
+            <div class="flex gap-4">
+              <label class="flex items-center custom-highlight"><input type="radio" name="feedbackType" value="Suggestion" class="mr-2">Suggestion</label>
+              <label class="flex items-center custom-highlight"><input type="radio" name="feedbackType" value="Complaint" class="mr-2">Complaint</label>
+              <label class="flex items-center custom-highlight"><input type="radio" name="feedbackType" value="Appreciation" class="mr-2">Appreciation</label>
+<style>
+  .custom-highlight.selected {
+    background-color: #dbeafe; /* Tailwind blue-100 */
+    border-radius: 0.375rem;
+    font-weight: 600;
+    color: #1d4ed8; /* Tailwind blue-700 */
+    transition: background 0.2s, color 0.2s;
+  }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('domainFeedbackForm');
+  const display = document.getElementById('domainFeedbackDisplay');
+  // Highlight logic for custom-highlight labels
+  function updateHighlights() {
+    // Radio groups
+    ['preferredTime', 'feedbackType'].forEach(group => {
+      const radios = document.querySelectorAll(`input[name='${group}']`);
+      radios.forEach(radio => {
+        const label = radio.closest('label');
+        if (radio.checked) {
+          label.classList.add('selected');
+        } else {
+          label.classList.remove('selected');
+        }
+      });
+    });
+    // Checkboxes
+    document.querySelectorAll("input[name='serviceLevel']").forEach(checkbox => {
+      const label = checkbox.closest('label');
+      if (checkbox.checked) {
+        label.classList.add('selected');
+      } else {
+        label.classList.remove('selected');
+      }
+    });
+  }
+  document.querySelectorAll('.custom-highlight input').forEach(input => {
+    input.addEventListener('change', updateHighlights);
+  });
+  // Initial highlight
+  updateHighlights();
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    // Get values
+    const name = form.querySelector('#userFullName').value;
+    const mobile = form.querySelector('#userMobile').value;
+    const opinion = form.querySelector('#userDomainOpinion').value;
+    const preferredTime = form.querySelector("input[name='preferredTime']:checked")?.value || 'Not selected';
+    const feedbackType = form.querySelector("input[name='feedbackType']:checked")?.value || 'Not selected';
+    const serviceLevels = Array.from(form.querySelectorAll("input[name='serviceLevel']:checked")).map(cb => cb.value);
+
+    // Display output
+    display.innerHTML = `
+      <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded shadow text-left">
+        <h4 class="font-bold text-blue-700 mb-2">Your Submitted Info:</h4>
+        <ul class="space-y-1">
+          <li><span class="font-semibold">Name:</span> ${name}</li>
+          <li><span class="font-semibold">Mobile Number:</span> ${mobile}</li>
+          <li><span class="font-semibold">Your Opinion:</span> ${opinion}</li>
+          <li><span class="font-semibold">Preferred Time:</span> ${preferredTime}</li>
+          <li><span class="font-semibold">Service Level:</span> ${serviceLevels.length ? serviceLevels.join(', ') : 'None selected'}</li>
+          <li><span class="font-semibold">Feedback Type:</span> ${feedbackType}</li>
+        </ul>
+      </div>
+    `;
+    form.reset();
+    updateHighlights();
+  });
+});
+</script>
+            </div>
+          </div>
+
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+        </form>
+        <div id="domainFeedbackDisplay" class="mt-4"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center py-4 mt-6">
+    <div class="flex flex-col items-center justify-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-1 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 0c-3.866 0-7 1.79-7 4v2h14v-2c0-2.21-3.134-4-7-4z" />
+        <circle cx="12" cy="9" r="7" stroke="currentColor" stroke-width="2" fill="none" />
+      </svg>
+      <p>&copy; YASHHH - 2025-06-25</p>
+      <p class="text-xs text-gray-400">Project submitted via Git & GitHub</p>
+    </div>
+
+    <!-- API Fetch Section -->
+   <section id="weather-section" class="section-box mt-6">
+  <h2 class="section-title"><i class="fas fa-cloud-sun text-blue-500"></i> Weather Info</h2>
+  <p class="text-gray-700 mb-2">Live weather forecast fetched using <a href="https://open-meteo.com/" target="_blank" class="text-blue-500 underline">Open-Meteo API</a>.</p>
+  <div id="weatherContent" class="text-lg text-gray-800 font-medium"></div>
+</section>
+
+  </footer>
+</body>
+</html>
